@@ -7,11 +7,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 NEIS_API_KEY = os.getenv("NEIS_API_KEY")
-ATPT_OFCDC_SC_CODE = "R10"     # 경북교육청
-SD_SCHUL_CODE = "8750829"      # 경북소프트웨어마이스터고
+ATPT_OFCDC_SC_CODE = "R10"     
+SD_SCHUL_CODE = "8750829"      
 
 def clean_meal_text(meal_text: str) -> str:
-    # 정규식을 사용하여 괄호 안의 내용 제거
     return re.sub(r"\([^)]*\)", "", meal_text).strip()
 
 def get_meal(date: str):
