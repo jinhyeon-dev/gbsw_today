@@ -1,3 +1,5 @@
+# 2025.4.30 - 개발자 김진현
+
 import datetime
 import os
 import subprocess
@@ -46,18 +48,15 @@ def main():
 
     # 끼니별 이미지 생성 및 업로드
     for meal_type_kor, meal_text in zip(["조식", "중식", "석식"], [meals["breakfast"], meals["lunch"], meals["dinner"]]):
-        if meal_text == "없음":  # 급식이 없을 경우 건너뛰기
+        if meal_text == "없음":  # 급식이 없을 경우 건너뜀
             print(f"[건너뜀] {meal_type_kor} 급식이 없습니다.")
             continue
 
-        # 이미지 생성
+        # 이미지 생성 부분
         path = render_meal_image(meal_type_kor, meal_text, display_date)
         print(f"{meal_type_kor} 이미지 저장 완료:", path)
 
-        # Mac에서 자동 열기 (선택)
-        subprocess.run(["open", path])
-
-        # Instagram 스토리에 업로드
+        # Instagram 스토리 업로드
         print(f"[업로드 중] {meal_type_kor}")
         cl.photo_upload_to_story(path, f"{meal_type_kor} 🍽️")
 
