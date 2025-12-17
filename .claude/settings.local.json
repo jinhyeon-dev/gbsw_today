@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(aws sts get-caller-identity:*)",
+      "mcp__awslabs_aws-api-mcp-server__call_aws",
+      "Bash(ssh-keygen:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "awslabs.core-mcp-server",
+    "awslabs.aws-api-mcp-server"
+  ]
+}
